@@ -1,2 +1,2 @@
-# digital-flix
+# Digital Flix
 A movie web app.
