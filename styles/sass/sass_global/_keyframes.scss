@@ -1,0 +1,28 @@
+@keyframes appearField {
+    from {
+        opacity: 0;
+        display: none;
+        
+    }
+
+    to {
+        opacity: 1;
+       
+    }
+
+    
+}
+
+
+@keyframes fadeBlack {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        background-color: $dark-color;
+        
+    }
+    
+}
