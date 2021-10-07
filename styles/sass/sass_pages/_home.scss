@@ -1,5 +1,5 @@
 body {
-    min-height: 300vh;
+    min-height: 100vh;
     background: url('../../assets/body-gradient.png');
     background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
@@ -75,13 +75,13 @@ header.fixed  {
 
     }
 
-    img.logo {
-        cursor: pointer;
+    a.img-logo {
         position: absolute;
         left: 50%;
-        transform: translate(-50%);
-        
+        transform: translate(-50%);  
+
     }
+    
 
     .settings {
         display: flex;
@@ -279,26 +279,108 @@ main.carousel {
             color: $light-color;
             font-size: 24px;
             font-weight: 500;
-            padding-block: $gutter * 2 $gutter;
+            padding-block: $gutter * 3 $gutter;
 
         }
 
         ul {
-            // position: relative;
             display: flex;
-            // flex-wrap: wrap;
+            flex-wrap: wrap;
             max-width: 100%;
-            overflow-x: scroll;
+            // overflow-x: scroll;
             gap: $gutter / 2;
 
             li {
                 cursor: pointer;
+                transition: .2s;
+                position: relative;
+
+                .description {
+                    display: none;
+                    background-color: $dark-color;
+                    color: $light-color;
+                    padding: $gutter / 1.5 $gutter / 2 $gutter $gutter / 2;
+                    position: absolute;
+                    margin-top: -5px;
+                    z-index: 99;
+                    font-size: 12px;
+                    gap: $gutter / 2;
+                    border-radius: 0 0 10px 30px;
+
+                    .actions {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 14px;
+
+                        i {
+                            padding: 10px;
+                            background: $reverse-transparent;
+                    
+                            border-radius: 50%;
+                            font-size: 16px;
+                            transition: .3s;
+
+                            &:first-child {
+                                background: $secondary-gradient;
+
+                                &:hover {
+                                    
+                                    background: $reverse-secondary-gradient;
+                                }
+                            }
+                            
+                            &:hover {
+                                transform: scale(1.1);
+                                background: $primary-color;
+                            }
+
+                        }
+                        .left {
+                            display: flex;
+                            gap: $gutter / 2;
+                        }
+
+                    }
+                    
+                    .status {
+                        display: flex;
+                        justify-content: space-between;
+
+                        p {
+                            font-weight: 600;
+
+                            &:first-child {
+                                color: $secondary-color;
+                            }   
+                        }
+                    }
+
+                    .synopsis {
+                        line-height: 1.3;
+                    }
+                }
 
                 img {
                     max-width: 200px;
                     max-height: 300px;
                     
                 }
+
+                &:hover {
+                    transform: scale(1.3);
+                    z-index: 99;
+                }
+
+                &:hover .description {
+                   
+                    display: flex;
+                    flex-direction: column;
+                    z-index: 99;
+
+                }
+
+
             }
          
 
